@@ -16,11 +16,16 @@
           </button>
         </div>
     </nav>
+    <div class="container text-center p-3">
+        <h1>Welcome to QR Menu Generator</h1>
+    </div>
     <!-- form for inputs -->
-    <form action="{%url 'generate_qr_code'%}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="form-control btn btn-primary">Generate QR code</button>
-    </form>
+     <div class="container shadow p-5 rounded" style="width: 600px; height: 400px;">
+         <form action="{%url 'generate_qr_code'%}" method="POST">
+             {% csrf_token %}
+             {{ form.as_p }}
+             <button type="submit" class="form-control btn btn-primary">Generate QR code</button>
+         </form>
+     </div>
 </body>
 </html>
