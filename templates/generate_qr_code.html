@@ -15,6 +15,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-      </nav>
+    </nav>
+    <!-- form for inputs -->
+    <form action="{%url 'generate_qr_code'%}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="form-control btn btn-primary">Generate QR code</button>
+    </form>
 </body>
 </html>
