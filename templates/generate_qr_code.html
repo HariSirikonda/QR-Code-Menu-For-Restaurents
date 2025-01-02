@@ -20,7 +20,7 @@
         <h1>Welcome to QR Menu Generator</h1>
     </div>
     <!-- form for inputs -->
-     <div class="container shadow p-5 rounded align-items-center justify-content-center " style="width: 600px; height: 400px;">
+    <div class="container shadow p-5 rounded align-items-center justify-content-center w-50">
         <form action="{%url 'generate_qr_code'%}" method="POST">
              {% csrf_token %}
              {{ form.as_p }}
