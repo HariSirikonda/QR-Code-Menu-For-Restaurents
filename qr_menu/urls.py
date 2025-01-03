@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views  # Import your views from the current directory
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.generate_qr_code, name='generate_qr_code')
-    
+    path('', views.generate_qr_code, name='generate_qr_code'),  # Main QR code generation route
 ]
