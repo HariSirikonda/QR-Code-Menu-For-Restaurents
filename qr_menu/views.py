@@ -16,8 +16,15 @@ def generate_qr_code(request):
             fileName = res_name.replace(" ","_").lower() + "_menu.png"
             file_path = os.path.join(settings.MEDIA_ROOT, fileName)
             qr.save(file_path)
+
+            #create Image URL
+            qr_url = os.path.join(settings.MEDIA_URL, fileName)
+
+
             context = {
-                'res_name' : res_name
+                'res_name' : res_name,
+                'qr_url' : qr_url,
+                'file_name' : fileName
             }
             return render(request, 'qr_result.html', context) 
     else:
