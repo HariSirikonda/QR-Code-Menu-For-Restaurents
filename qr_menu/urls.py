@@ -23,4 +23,4 @@ from . import views  # Import your views from the current directory
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.generate_qr_code, name='generate_qr_code'),  # Main QR code generation route
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
