@@ -11,7 +11,8 @@ def generate_qr_code(request):
             
             #Generate QR Code
             qr = qrcode.make(url)
-            qr.save('testqr.png')    
+            fileName = res_name.replace(" ","").lower() + "_menu.png"
+            qr.save(fileName)    
     else:
         form = QRCodeForm()
         context = { 'form' : form}
